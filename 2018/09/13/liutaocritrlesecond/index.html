@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS,iOS技术" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="To strive, to seek, to find, and not to yield.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="liutao&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/categories/iOS-小技巧/index.html">
+<meta name="description" content="最近想换工作,本来信心满满的,可直到面试,才知道自己所掌握知识的薄弱的地方。于是针对面试薄弱,我开始了runtime的学习.以下将以我的学习过程来给大家讲解runtime这个非常重要,但是又很宽泛的一个东西,希望给迷茫中的你一点帮助.也作为自己的学习笔记.什么是runtime?runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言AP">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 揭开runtime的神秘面纱">
+<meta property="og:url" content="http://yoursite.com/2018/09/13/liutaocritrlesecond/index.html">
 <meta property="og:site_name" content="liutao&#39;s blog">
-<meta property="og:description" content="To strive, to seek, to find, and not to yield.">
+<meta property="og:description" content="最近想换工作,本来信心满满的,可直到面试,才知道自己所掌握知识的薄弱的地方。于是针对面试薄弱,我开始了runtime的学习.以下将以我的学习过程来给大家讲解runtime这个非常重要,但是又很宽泛的一个东西,希望给迷茫中的你一点帮助.也作为自己的学习笔记.什么是runtime?runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言AP">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-14T07:44:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="liutao&#39;s blog">
-<meta name="twitter:description" content="To strive, to seek, to find, and not to yield.">
+<meta name="twitter:title" content="iOS 揭开runtime的神秘面纱">
+<meta name="twitter:description" content="最近想换工作,本来信心满满的,可直到面试,才知道自己所掌握知识的薄弱的地方。于是针对面试薄弱,我开始了runtime的学习.以下将以我的学习过程来给大家讲解runtime这个非常重要,但是又很宽泛的一个东西,希望给迷茫中的你一点帮助.也作为自己的学习笔记.什么是runtime?runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言AP">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/iOS-小技巧/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/13/liutaocritrlesecond/"/>
 
 
 
 
 
-  <title>分类: iOS 小技巧 | liutao's blog</title>
+  <title>iOS 揭开runtime的神秘面纱 | liutao's blog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,55 +249,186 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>iOS 小技巧<small>分类</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/13/liutaocritrlesecond/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="coderLiu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liutao's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/13/liutao/" itemprop="url">
-              
-                <span itemprop="name">Runtime全方位装逼指南</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">iOS 揭开runtime的神秘面纱</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-13T16:50:28+08:00"
-              content="2018-09-13" >
-          09-13
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-13T16:50:28+08:00">
+                2018-09-13
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS-黑魔法/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS 黑魔法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">浏览数</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近想换工作,本来信心满满的,可直到面试,才知道自己所掌握知识的薄弱的地方。于是针对面试薄弱,我开始了runtime的学习.以下将以我的学习过程来给大家讲解runtime这个非常重要,但是又很宽泛的一个东西,希望给迷茫中的你一点帮助.也作为自己的学习笔记.<br>什么是runtime?<br>runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言API,属于一个C语言库,包含了很多底层的C语言API,它是OC的幕后工作者,我们平时写的OC代码,在运行过程时,都会转为runtime的C语言代码<br>runtime有什么用?<br>如果你之前不知道runtime,可能觉得它没什么用,其实他的作用非常强大.下面我们就以代码的形式为大家揭开runtime的神秘面纱<br>作用1  获取一个类全部成员变量名(如果你的成员私有,也可以获取到)<br>我们新建一个Person类,.h代码如下</p>
+<p>这些成员变量都是公有的,我们直接点开头文件就可以看到,如果是系统的类呢,你是不是就不知道类里面有哪些成员了,利用runtime可以轻松解决这个问题,现在我们来测试一下,记得要加 #import </p>
+<p>打印结果</p>
+<p>你可以试一下,把所有的成员放到.m文件里面,它打印的结果是一样的.<br>作用2  同理,我们可以获取到一个类的全部属性名</p>
+<p>打印结果:</p>
+<p>作用3 获取一个类的全部方法</p>
+<p>打印结果:</p>
+<p>我们可以看到所有的方法<br>作用4 获取一个类遵循的所有协议<br>先将遵循的协议给注释掉</p>
+<p>测试代码</p>
+<p>结果啥都没有打印出来</p>
+<p>我们把遵循的代码注释给打开<br>再执行测试代码,打印结果</p>
+<p>是不是很棒,你可能觉得貌似用处不太大,那接下来我们来看看如何利用runtime归档和解档.<br>作用5 归档/解档测试如下:打印结果:</p>
+<p>是不是比你以前归档解档简单多了。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/13/liutao/" rel="prev" title="Runtime全方位装逼指南">
+                Runtime全方位装逼指南 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -303,6 +436,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -578,6 +715,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
