@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS,iOS技术" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="title: iOS 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  常驻线程  (void)viewDidLoad{ NSThread * thread =">
+<meta name="description" content="常驻线程  (void)viewDidLoad{ NSThread * thread = [[NSThread alloc]initWithTarget:self selector:@selector(run) object:nil];}  (void)run {   [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefau">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="liutao&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/2018/09/13/liutaocritrle_08/index.html">
+<meta property="og:title" content="iOS 常驻线程写法">
+<meta property="og:url" content="http://yoursite.com/2019/04/10/liutaocritrle_08/index.html">
 <meta property="og:site_name" content="liutao&#39;s blog">
-<meta property="og:description" content="title: iOS 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  常驻线程  (void)viewDidLoad{ NSThread * thread =">
+<meta property="og:description" content="常驻线程  (void)viewDidLoad{ NSThread * thread = [[NSThread alloc]initWithTarget:self selector:@selector(run) object:nil];}  (void)run {   [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefau">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T06:44:12.641Z">
+<meta property="og:updated_time" content="2019-05-07T06:46:25.455Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="liutao&#39;s blog">
-<meta name="twitter:description" content="title: iOS 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  常驻线程  (void)viewDidLoad{ NSThread * thread =">
+<meta name="twitter:title" content="iOS 常驻线程写法">
+<meta name="twitter:description" content="常驻线程  (void)viewDidLoad{ NSThread * thread = [[NSThread alloc]initWithTarget:self selector:@selector(run) object:nil];}  (void)run {   [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefau">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/13/liutaocritrle_08/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/04/10/liutaocritrle_08/"/>
 
 
 
 
 
-  <title> | liutao's blog</title>
+  <title>iOS 常驻线程写法 | liutao's blog</title>
   
 
 
@@ -262,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/13/liutaocritrle_08/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/liutaocritrle_08/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="coderLiu">
@@ -279,7 +280,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline"></h2>
+          <h2 class="post-title" itemprop="name headline">iOS 常驻线程写法</h2>
         
 
         <div class="post-meta">
@@ -291,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-13T16:50:28+08:00">
-                2018-09-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-10T08:56:40+08:00">
+                2019-04-10
               </time>
             
 
@@ -301,6 +302,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS-黑魔法/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS 黑魔法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -334,13 +357,7 @@
       
 
       
-        <hr>
-<p>title: iOS 常驻线程写法<br>date: 2019-04-10 08:56:40<br>categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级</p>
-<ul>
-<li>[iOS 黑魔法]<br>tags:   # 这里写的标签会自动汇集到 tags 页面上</li>
-<li>iOS  # 可配置多个标签，注意格式</li>
-</ul>
-<p>常驻线程</p>
+        <p>常驻线程</p>
 <ul>
 <li><p>(void)viewDidLoad<br>{<br> NSThread * thread = [[NSThread alloc]initWithTarget:self selector:@selector(run) object:nil];<br>}</p>
 </li>
@@ -364,6 +381,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
+      
 
       
       
@@ -373,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/13/liutaocritrlesecond/" rel="next" title="iOS 揭开runtime的神秘面纱">
-                <i class="fa fa-chevron-left"></i> iOS 揭开runtime的神秘面纱
+              <a href="/2019/04/08/liutaocritrle_06/" rel="next" title="iOS http协议原理">
+                <i class="fa fa-chevron-left"></i> iOS http协议原理
               </a>
             
           </div>
@@ -383,8 +406,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/13/liutao/" rel="prev" title="Runtime全方位装逼指南">
-                Runtime全方位装逼指南 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/10/liutaocritrle_07/" rel="prev" title="使用终端命令上传代码到github">
+                使用终端命令上传代码到github <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
