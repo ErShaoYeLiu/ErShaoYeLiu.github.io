@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="关于限制输入字数以前也做过，网上也很多方法。但都不够完美，本方法可防止中文联想、粘贴等突破长途限制、可防止Emoji截为两半导致编码出问题。  (void)textFieldDidChange:(UITextField *)textField{  if (textField == self.textFieldName) {if (textField.text.length &amp;gt; 15) { U">
+<meta name="description" content="三、HTTP通信过程 - 请求和响应1.HTTP通信过程 - 请求HTTP协议规定：1个完整的由客户端发给服务器的HTTP请求中包含以下内容请求行：包含了请求方法、请求资源路径、HTTP协议版本GET /MJServer/resources/images/1.jpg HTTP/1.1请求头：包含了对客户端的环境描述、客户端请求的主机地址等信息Host: 192.168.1.105:8080 //">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS 限制输入字数完美解决方案">
-<meta property="og:url" content="http://yoursite.com/2018/09/13/liutaocritrle/index.html">
+<meta property="og:title" content="iOS http协议原理">
+<meta property="og:url" content="http://yoursite.com/2019/04/08/liutaocritrle_06/index.html">
 <meta property="og:site_name" content="liutao&#39;s blog">
-<meta property="og:description" content="关于限制输入字数以前也做过，网上也很多方法。但都不够完美，本方法可防止中文联想、粘贴等突破长途限制、可防止Emoji截为两半导致编码出问题。  (void)textFieldDidChange:(UITextField *)textField{  if (textField == self.textFieldName) {if (textField.text.length &amp;gt; 15) { U">
+<meta property="og:description" content="三、HTTP通信过程 - 请求和响应1.HTTP通信过程 - 请求HTTP协议规定：1个完整的由客户端发给服务器的HTTP请求中包含以下内容请求行：包含了请求方法、请求资源路径、HTTP协议版本GET /MJServer/resources/images/1.jpg HTTP/1.1请求头：包含了对客户端的环境描述、客户端请求的主机地址等信息Host: 192.168.1.105:8080 //">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-14T03:13:10.000Z">
+<meta property="og:updated_time" content="2019-05-07T03:06:04.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS 限制输入字数完美解决方案">
-<meta name="twitter:description" content="关于限制输入字数以前也做过，网上也很多方法。但都不够完美，本方法可防止中文联想、粘贴等突破长途限制、可防止Emoji截为两半导致编码出问题。  (void)textFieldDidChange:(UITextField *)textField{  if (textField == self.textFieldName) {if (textField.text.length &amp;gt; 15) { U">
+<meta name="twitter:title" content="iOS http协议原理">
+<meta name="twitter:description" content="三、HTTP通信过程 - 请求和响应1.HTTP通信过程 - 请求HTTP协议规定：1个完整的由客户端发给服务器的HTTP请求中包含以下内容请求行：包含了请求方法、请求资源路径、HTTP协议版本GET /MJServer/resources/images/1.jpg HTTP/1.1请求头：包含了对客户端的环境描述、客户端请求的主机地址等信息Host: 192.168.1.105:8080 //">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/13/liutaocritrle/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/04/08/liutaocritrle_06/"/>
 
 
 
 
 
-  <title>iOS 限制输入字数完美解决方案 | liutao's blog</title>
+  <title>iOS http协议原理 | liutao's blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/13/liutaocritrle/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/08/liutaocritrle_06/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="coderLiu">
@@ -280,7 +280,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">iOS 限制输入字数完美解决方案</h2>
+          <h2 class="post-title" itemprop="name headline">iOS http协议原理</h2>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-13T16:50:28+08:00">
-                2018-09-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-08T08:56:40+08:00">
+                2019-04-08
               </time>
             
 
@@ -357,20 +357,8 @@
       
 
       
-        <p>关于限制输入字数以前也做过，网上也很多方法。但都不够完美，本方法可防止中文联想、粘贴等突破长途限制、可防止Emoji截为两半导致编码出问题。</p>
-<ul>
-<li>(void)textFieldDidChange:(UITextField *)textField<br>{<br>  if (textField == self.textFieldName) {<pre><code>if (textField.text.length &gt; 15) {
-UITextRange *markedRange = [textField markedTextRange];
-   if (markedRange) {
-      return;
-   }
-    //Emoji占2个字符，如果是超出了半个Emoji，用15位置来截取会出现Emoji截为2半
-//超出最大长度的那个字符序列(Emoji算一个字符序列)的range
-NSRange range = [textField.text rangeOfComposedCharacterSequenceAtIndex:15];
-    textField.text = [textField.text substringToIndex:range.location];
-}
-</code></pre>  }<br>}</li>
-</ul>
+        <p>三、HTTP通信过程 - 请求和响应<br>1.HTTP通信过程 - 请求<br>HTTP协议规定：1个完整的由客户端发给服务器的HTTP请求中包含以下内容<br>请求行：包含了请求方法、请求资源路径、HTTP协议版本<br>GET /MJServer/resources/images/1.jpg HTTP/1.1<br>请求头：包含了对客户端的环境描述、客户端请求的主机地址等信息<br>Host: 192.168.1.105:8080 // 客户端想访问的服务器主机地址<br>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9) Firefox/30.0// 客户端的类型，客户端的软件环境<br>Accept: text/html, <em>/</em>// 客户端所能接收的数据类型<br>Accept-Language: zh-cn // 客户端的语言环境<br>Accept-Encoding: gzip // 客户端支持的数据压缩格式<br>请求体：客户端发给服务器的具体数据，比如文件数据</p>
+<p> 2.HTTP通信过程 - 响应<br>客户端向服务器发送请求，服务器应当做出响应，即返回数据给客户端<br>HTTP协议规定：1个完整的HTTP响应中包含以下内容：<br>状态行：包含了HTTP协议版本、状态码、状态英文名称<br>HTTP/1.1 200 OK<br>响应头：包含了对服务器的描述、对返回数据的描述<br>Server: Apache-Coyote/1.1 // 服务器的类型<br>Content-Type: image/jpeg // 返回数据的类型<br>Content-Length: 56811 // 返回数据的长度<br>Date: Mon, 23 Jun 2014 12:54:52 GMT // 响应的时间<br>实体内容：服务器返回给客户端的具体数据，比如文件数据     </p>
 
       
     </div>
@@ -401,8 +389,8 @@ NSRange range = [textField.text rangeOfComposedCharacterSequenceAtIndex:15];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/13/liutaocritrlesecond/" rel="next" title="iOS 揭开runtime的神秘面纱">
-                <i class="fa fa-chevron-left"></i> iOS 揭开runtime的神秘面纱
+              <a href="/2019/04/05/liutaocritrle_05/" rel="next" title="iOS 中使用va_start和va_end来做can'hu参数访问">
+                <i class="fa fa-chevron-left"></i> iOS 中使用va_start和va_end来做can'hu参数访问
               </a>
             
           </div>
@@ -411,8 +399,8 @@ NSRange range = [textField.text rangeOfComposedCharacterSequenceAtIndex:15];
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/13/hello-world/" rel="prev" title="搭建自己的博客试试">
-                搭建自己的博客试试 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/27/liutaocritrlefour/" rel="prev" title="Swift中的问号?和感叹号!">
+                Swift中的问号?和感叹号! <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
