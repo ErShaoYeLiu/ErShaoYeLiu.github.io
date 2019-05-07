@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="title: iOS 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  常驻线程  (void)viewDidLoad  {   NSThread * threa">
+<meta name="description" content="title: iOS 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  常驻线程  (void)viewDidLoad{ NSThread * thread =">
 <meta property="og:type" content="article">
 <meta property="og:title" content="liutao&#39;s blog">
 <meta property="og:url" content="http://yoursite.com/2018/09/13/liutaocritrle_08/index.html">
 <meta property="og:site_name" content="liutao&#39;s blog">
-<meta property="og:description" content="title: iOS 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  常驻线程  (void)viewDidLoad  {   NSThread * threa">
+<meta property="og:description" content="title: iOS 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  常驻线程  (void)viewDidLoad{ NSThread * thread =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T06:41:27.484Z">
+<meta property="og:updated_time" content="2019-05-07T06:44:12.641Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="liutao&#39;s blog">
-<meta name="twitter:description" content="title: iOS 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  常驻线程  (void)viewDidLoad  {   NSThread * threa">
+<meta name="twitter:description" content="title: iOS 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  常驻线程  (void)viewDidLoad{ NSThread * thread =">
 
 
 
@@ -342,10 +342,8 @@
 </ul>
 <p>常驻线程</p>
 <ul>
-<li>(void)viewDidLoad</li>
-</ul>
-<p>{<br>   NSThread * thread = [[NSThread alloc]initWithTarget:self selector:@selector(run) object:nil];<br>}</p>
-<ul>
+<li><p>(void)viewDidLoad<br>{<br> NSThread * thread = [[NSThread alloc]initWithTarget:self selector:@selector(run) object:nil];<br>}</p>
+</li>
 <li><p>(void)run {</p>
 <p>  [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefaultRunLoopMode];<br>  [[NSRunLoop currentRunLoop] run]</p>
 </li>
