@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS," />
+  <meta name="keywords" content="iOS,iOS技术" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="一、重绘机制 iOS的绘图操作是在UIView类的drawRect方法中完成的，所以如果我们要想在一个UIView中绘图，需要写一个扩展UIView 的类，并重写drawRect方法，在这里进行绘图操作，程序会自动调用此方法进行绘图。重绘操作仍然在drawRect方法中完成，但是苹果不建议直接调用drawRect方法，当然如果你强直直接调用此方法，当然是没有效果的。苹果要求我们调用UIView类中">
-<meta name="keywords" content="iOS">
+<meta name="description" content="title: 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  (void)viewDidLoad   }   NSThread * thread = [[NST">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS 重绘机制">
-<meta property="og:url" content="http://yoursite.com/2019/05/05/liutaocritrlethree/index.html">
+<meta property="og:title" content="liutao&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/2018/09/13/liutaocritrle_08/index.html">
 <meta property="og:site_name" content="liutao&#39;s blog">
-<meta property="og:description" content="一、重绘机制 iOS的绘图操作是在UIView类的drawRect方法中完成的，所以如果我们要想在一个UIView中绘图，需要写一个扩展UIView 的类，并重写drawRect方法，在这里进行绘图操作，程序会自动调用此方法进行绘图。重绘操作仍然在drawRect方法中完成，但是苹果不建议直接调用drawRect方法，当然如果你强直直接调用此方法，当然是没有效果的。苹果要求我们调用UIView类中">
+<meta property="og:description" content="title: 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  (void)viewDidLoad   }   NSThread * thread = [[NST">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T02:51:01.068Z">
+<meta property="og:updated_time" content="2019-05-07T06:31:14.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS 重绘机制">
-<meta name="twitter:description" content="一、重绘机制 iOS的绘图操作是在UIView类的drawRect方法中完成的，所以如果我们要想在一个UIView中绘图，需要写一个扩展UIView 的类，并重写drawRect方法，在这里进行绘图操作，程序会自动调用此方法进行绘图。重绘操作仍然在drawRect方法中完成，但是苹果不建议直接调用drawRect方法，当然如果你强直直接调用此方法，当然是没有效果的。苹果要求我们调用UIView类中">
+<meta name="twitter:title" content="liutao&#39;s blog">
+<meta name="twitter:description" content="title: 常驻线程写法date: 2019-04-10 08:56:40categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级  [iOS 黑魔法]tags:   # 这里写的标签会自动汇集到 tags 页面上 iOS  # 可配置多个标签，注意格式  (void)viewDidLoad   }   NSThread * thread = [[NST">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/05/liutaocritrlethree/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/13/liutaocritrle_08/"/>
 
 
 
 
 
-  <title>iOS 重绘机制 | liutao's blog</title>
+  <title> | liutao's blog</title>
   
 
 
@@ -263,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/liutaocritrlethree/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/13/liutaocritrle_08/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="coderLiu">
@@ -280,7 +279,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">iOS 重绘机制</h2>
+          <h2 class="post-title" itemprop="name headline"></h2>
         
 
         <div class="post-meta">
@@ -292,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T08:56:40+08:00">
-                2019-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-13T16:50:28+08:00">
+                2018-09-13
               </time>
             
 
@@ -302,28 +301,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS-黑魔法/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS 黑魔法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -357,29 +334,22 @@
       
 
       
-        <p>一、重绘机制</p>
-<p>iOS的绘图操作是在UIView类的drawRect方法中完成的，所以如果我们要想在一个UIView中绘图，需要写一个扩展UIView 的类，并重写drawRect方法，在这里进行绘图操作，程序会自动调用此方法进行绘图。<br>重绘操作仍然在drawRect方法中完成，但是苹果不建议直接调用drawRect方法，当然如果你强直直接调用此方法，当然是没有效果的。苹果要求我们调用UIView类中的setNeedsDisplay方法，则程序会自动调用drawRect方法进行重绘。（调用setNeedsDisplay会自动调用drawRect）。<br>在UIView中,重写drawRect: (CGRect) aRect方法,可以自己定义想要画的图案.且此方法一般情况下只会画一次.也就是说这个drawRect方法一般情况下只会被掉用一次. 当某些情况下想要手动重画这个View,只需要掉用[self setNeedsDisplay]方法即可.</p>
-<p>二、方法定义</p>
+        <hr>
+<p>title: 常驻线程写法<br>date: 2019-04-10 08:56:40<br>categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级</p>
 <ul>
-<li>①、- (void)drawRect:(CGRect)rect;<br>重写此方法，执行重绘任务</li>
-<li>②、- (void)setNeedsDisplay;<br>标记为需要重绘，异步调用drawRect</li>
-<li>③、- (void)setNeedsDisplayInRect:(CGRect)rect;<br>标记为需要局部重绘</li>
+<li>[iOS 黑魔法]<br>tags:   # 这里写的标签会自动汇集到 tags 页面上</li>
+<li><p>iOS  # 可配置多个标签，注意格式</p>
+</li>
+<li><p>(void)viewDidLoad</p>
+</li>
 </ul>
-<p>三、drawRect调用机制</p>
-<p>drawRect调用是在Controller-&gt;loadView,，Controller-&gt;viewDidLoad 两方法之后调用的。所以不用担心在控制器中，这些View的drawRect就开始画了。这样可以在控制器中设置一些值给View(如果这些View draw的时候需要用到某些变量值).</p>
+<p>}<br>   NSThread * thread = [[NSThread alloc]initWithTarget:self selector:@selector(run) object:nil];<br>}</p>
 <ul>
-<li>1、如果在UIView初始化时没有设置rect大小，将直接导致drawRect不被自动调用。</li>
-<li>2、该方法在调用sizeThatFits后被调用，所以可以先调用sizeToFit计算出size。然后系统自动调用drawRect:方法。</li>
-<li>3、通过设置contentMode属性值为UIViewContentModeRedraw。那么将在每次设置或更改frame的时候自动调用drawRect:。</li>
-<li><p>4、直接调用setNeedsDisplay，或者setNeedsDisplayInRect:触发drawRect:，但是有个前提条件是rect不能为0.<br>以上1,2推荐；而3,4不提倡<br>四、绘图</p>
+<li><p>(void)run {</p>
+<p>  [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefaultRunLoopMode];<br>  [[NSRunLoop currentRunLoop] run]</p>
 </li>
-<li><p>1、若使用UIView绘图，只能在drawRect：方法中获取相应的contextRef并绘图。如果在其他方法中获取将获取到一个invalidate的ref并且不能用于画图。drawRect：方法不能手动显示调用，必须通过调用setNeedsDisplay 或者 setNeedsDisplayInRect ，让系统自动调该方法。</p>
-</li>
-<li>2、若使用calayer绘图，只能在drawInContext: 中（类似于drawRect）绘制，或者在delegate中的相应方法绘制。同样也是调用setNeedDisplay等间接调用以上方法。</li>
-<li>3、若要实时画图，不能使用gestureRecognizer，只能使用touchbegan等方法来掉用setNeedsDisplay实时刷新屏幕</li>
 </ul>
-<p>五、比较</p>
-<p>layoutSubviews对subviews重新布局；<br>layoutSubviews方法调用先于drawRect；<br>setNeedsLayout在receiver标上一个需要被重新布局的标记，在系统runloop的下一个周期自动调用layoutSubviews；<br>layoutIfNeeded方法如其名，UIKit会判断该receiver是否需要layout.根据Apple官方文档,layoutIfNeeded方法应该是这样的<br>layoutIfNeeded遍历的不是superview链，应该是subviews链<br>drawRect是对receiver的重绘，能获得context；<br>setNeedDisplay在receiver标上一个需要被重新绘图的标记，在下一个draw周期自动重绘，iphone device的刷新频率是60hz，也就是1/60秒后重绘。</p>
+<p>}</p>
 
       
     </div>
@@ -395,12 +365,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/iOS/" rel="tag"># iOS</a>
-          
-        </div>
-      
 
       
       
@@ -410,8 +374,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/27/liutaocritrlefour/" rel="next" title="Swift中的问号?和感叹号!">
-                <i class="fa fa-chevron-left"></i> Swift中的问号?和感叹号!
+              <a href="/2018/09/13/liutaocritrlesecond/" rel="next" title="iOS 揭开runtime的神秘面纱">
+                <i class="fa fa-chevron-left"></i> iOS 揭开runtime的神秘面纱
               </a>
             
           </div>
@@ -419,6 +383,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/13/liutaocritrle/" rel="prev" title="iOS 限制输入字数完美解决方案">
+                iOS 限制输入字数完美解决方案 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
