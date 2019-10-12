@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS,iOS技术" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="To strive, to seek, to find, and not to yield.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="schedule">
-<meta property="og:url" content="http://yoursite.com/schedule/index.html">
+<meta name="description" content="探寻OC对象的本质，我们平时编写的Objective-C代码，底层实现其实都是C\C++代码。 OC的对象结构都是通过基础C\C++的结构体实现的。 我们通过创建OC文件及对象，并将OC文件转化为C++文件来探寻OC对象的本质OC如下代码： #import &amp;lt;Foundation/Foundation.h&amp;gt; int main(int argc, const char  argv[])">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OC对象的本质">
+<meta property="og:url" content="http://yoursite.com/2019/10/12/liutaocritrle_11/index.html">
 <meta property="og:site_name" content="liutao&#39;s blog">
-<meta property="og:description" content="To strive, to seek, to find, and not to yield.">
+<meta property="og:description" content="探寻OC对象的本质，我们平时编写的Objective-C代码，底层实现其实都是C\C++代码。 OC的对象结构都是通过基础C\C++的结构体实现的。 我们通过创建OC文件及对象，并将OC文件转化为C++文件来探寻OC对象的本质OC如下代码： #import &amp;lt;Foundation/Foundation.h&amp;gt; int main(int argc, const char  argv[])">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-13T10:07:30.000Z">
+<meta property="og:updated_time" content="2019-10-12T09:54:38.216Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="schedule">
-<meta name="twitter:description" content="To strive, to seek, to find, and not to yield.">
+<meta name="twitter:title" content="OC对象的本质">
+<meta name="twitter:description" content="探寻OC对象的本质，我们平时编写的Objective-C代码，底层实现其实都是C\C++代码。 OC的对象结构都是通过基础C\C++的结构体实现的。 我们通过创建OC文件及对象，并将OC文件转化为C++文件来探寻OC对象的本质OC如下代码： #import &amp;lt;Foundation/Foundation.h&amp;gt; int main(int argc, const char  argv[])">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/schedule/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/10/12/liutaocritrle_11/"/>
 
 
 
 
 
-  <title>schedule | liutao's blog</title>
+  <title>OC对象的本质 | liutao's blog</title>
   
 
 
@@ -250,33 +251,211 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/12/liutaocritrle_11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="coderLiu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liutao's blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">schedule</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h2 class="post-title" itemprop="name headline">OC对象的本质</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-12T09:12:40+08:00">
+                2019-10-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS-黑魔法/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS 黑魔法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">浏览数</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>探寻OC对象的本质，我们平时编写的Objective-C代码，底层实现其实都是C\C++代码。</p>
+<p>OC的对象结构都是通过基础C\C++的结构体实现的。 我们通过创建OC文件及对象，并将OC文件转化为C++文件来探寻OC对象的本质<br>OC如下代码：</p>
+<p>#import &lt;Foundation/Foundation.h&gt;</p>
+<p>int main(int argc, const char <em> argv[]) {<br>    @autoreleasepool {<br>        NSObject </em>objc = [[NSObject alloc] init];<br>        NSLog(@”Hello, World!”);<br>    }<br>    return 0;<br>}</p>
+<p>我们通过命令行将OC的mian.m文件转化为c++文件。</p>
+<p>clang -rewrite-objc main.m -o main.cpp // 这种方式没有指定架构例如arm64架构 其中cpp代表（c plus plus）<br>生成 main.cpp</p>
+<p>我们可以指定架构模式的命令行，使用xcode工具 xcrun</p>
+<p>xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc main.m -o main-arm64.cpp<br>生成 main-arm64.cpp</p>
+<p>main-arm64.cpp 文件中搜索NSObjcet，可以找到NSObjcet_IMPL（IMPL代表 implementation 实现）</p>
+<p>我们看一下NSObject_IMPL内部</p>
+<p>struct NSObject_IMPL {<br>    Class isa;<br>};<br>// 查看Class本质<br>typedef struct objc_class *Class;<br>我们发现Class其实就是一个指针，对象底层实现其实就是这个样子。</p>
+<p>思考： 一个OC对象在内存中是如何布局的。 NSObjcet的底层实现，点击NSObjcet进入发现NSObject的内部实现</p>
+<p>@interface NSObject <nsobject> {</nsobject></p>
+<p>#pragma clang diagnostic push</p>
+<p>#pragma clang diagnostic ignored “-Wobjc-interface-ivars”<br>    Class isa  OBJC_ISA_AVAILABILITY;</p>
+<p>#pragma clang diagnostic pop<br>}<br>@end</p>
+<p>转化为c语言其实就是一个结构体</p>
+<p>struct NSObject_IMPL {<br>    Class isa;<br>};</p>
+<p>那么这个结构体占多大的内存空间呢，我们发现这个结构体只有一个成员，isa指针，而指针在64位架构中占8个字节。也就是说一个NSObjec对象所占用的内存是8个字节。到这里我们已经可以基本解答第一个问题。但是我们发现NSObject对象中还有很多方法，那这些方法不占用内存空间吗？其实类的方法等也占用内存空间，但是这些方法所占用的存储空间并不在NSObject对象中。</p>
+<p>为了探寻OC对象在内存中如何体现，我们来看下面一段代码</p>
+<p>NSObject *objc = [[NSObject alloc] init];</p>
+<p>上面一段代码在内存中如何体现的呢？上述一段代码中系统为NSObject对象分配8个字节的内存空间，用来存放一个成员isa指针。那么isa指针这个变量的地址就是结构体的地址，也就是NSObjcet对象的地址。<br>假设isa的地址为0x100400110，那么上述代码分配存储空间给NSObject对象，然后将存储空间的地址赋值给objc指针。objc存储的就是isa的地址。objc指向内存中NSObject对象地址，即指向内存中的结构体，也就是isa的位置。</p>
+<p>@interface Student : NSObject{</p>
+<pre><code>@public
+int _no;
+int _age;
+</code></pre><p>}<br>@end<br>@implementation Student</p>
+<p>int main(int argc, const char * argv[]) {<br>    @autoreleasepool {</p>
+<pre><code>    Student *stu = [[Student alloc] init];
+    stu -&gt; _no = 4;
+    stu -&gt; _age = 5;
+
+    NSLog(@&quot;%@&quot;,stu);
+}
+return 0;
+</code></pre><p>}<br>@end</p>
+<p>按照上述步骤同样生成c++文件。并查找Student，我们发现Student_IMPL</p>
+<p>struct Student_IMPL {<br>    struct NSObject_IMPL NSObject_IVARS;<br>    int _no;<br>    int _age;<br>};</p>
+<p>发现第一个是 NSObject_IMPL的实现。而通过上面的实验我们知道NSObject_IMPL内部其实就是Class isa 那么我们假设 struct NSObject_IMPL NSObject_IVARS; 等价于 Class isa;</p>
+<p>可以将上述代码转化为</p>
+<p>struct Student_IMPL {<br>    Class *isa;<br>    int _no;<br>    int _age;<br>};</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/14/liutaocritrle_10/" rel="next" title="移动App 网络优化细节探讨(转载)">
+                <i class="fa fa-chevron-left"></i> 移动App 网络优化细节探讨(转载)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
