@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="liutao&#39;s blog">
 <meta property="og:description" content="探寻OC对象的本质，我们平时编写的Objective-C代码，底层实现其实都是C\C++代码。 OC的对象结构都是通过基础C\C++的结构体实现的。 我们通过创建OC文件及对象，并将OC文件转化为C++文件来探寻OC对象的本质OC如下代码： #import &amp;lt;Foundation/Foundation.h&amp;gt; int main(int argc, const char  argv[])">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-12T09:54:38.216Z">
+<meta property="og:updated_time" content="2019-10-15T01:24:32.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OC对象的本质">
 <meta name="twitter:description" content="探寻OC对象的本质，我们平时编写的Objective-C代码，底层实现其实都是C\C++代码。 OC的对象结构都是通过基础C\C++的结构体实现的。 我们通过创建OC文件及对象，并将OC文件转化为C++文件来探寻OC对象的本质OC如下代码： #import &amp;lt;Foundation/Foundation.h&amp;gt; int main(int argc, const char  argv[])">
@@ -398,6 +398,11 @@ return 0;
 <p>发现第一个是 NSObject_IMPL的实现。而通过上面的实验我们知道NSObject_IMPL内部其实就是Class isa 那么我们假设 struct NSObject_IMPL NSObject_IVARS; 等价于 Class isa;</p>
 <p>可以将上述代码转化为</p>
 <p>struct Student_IMPL {<br>    Class *isa;<br>    int _no;<br>    int _age;<br>};</p>
+<p>##类</p>
+<p>对象的类不仅描述了对象的数据：对象占用的内存大小，成员变量的类型和布局，也描述了对象的行为：对象能够响应的消息，实现的实力方法。实际上我们调用实例方法【receiver message】给对象发送一个消息的时候，这个对象能否响应这个消息就需要通过isa来这道它所属的类，才能知道</p>
+<p>实例方法保存在类中，类方法保存在元类中的</p>
+<p>元类也是对象 ，元类是根元类的实例对象。根元类isa是指向本身的</p>
+<p>void prepare_load_methods(h+hi-</p>
 
       
     </div>
@@ -437,6 +442,10 @@ return 0;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/13/liutaocritrle_12/" rel="prev" title="HTTP 报文">
+                HTTP 报文 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -508,7 +517,7 @@ return 0;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
