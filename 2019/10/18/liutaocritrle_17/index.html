@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="TCP 提供一种面向连接的、可靠的字节流服务在一个 TCP 连接中，仅有两方进行彼此通信。广播和多播不能用于 TCPTCP 使用校验和，确认和重传机制来保证可靠传输TCP 给数据分节进行排序，并使用累积确认保证数据的顺序不变和非重复TCP 使用滑动窗口机制来实现流量控制，通过动态改变窗口的大小进行拥塞控制 三次握手与四次挥手 所谓三次握手(Three-way Handshake)，是指建立一个 T">
+<meta name="description" content="Socket 基本概念 Socket 是对 TCP/IP 协议族的一种封装，是应用层与TCP/IP协议族通信的中间软件抽象层。从设计模式的角度看来，Socket其实就是一个门面模式，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。 Socket 还可以认为是一种网络间不同计算机上的进程通信的一种方法，利用三元组">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TCP">
-<meta property="og:url" content="http://yoursite.com/2019/10/17/liutaocritrle_14/index.html">
+<meta property="og:title" content="Socket 基本概念">
+<meta property="og:url" content="http://yoursite.com/2019/10/18/liutaocritrle_17/index.html">
 <meta property="og:site_name" content="liutao&#39;s blog">
-<meta property="og:description" content="TCP 提供一种面向连接的、可靠的字节流服务在一个 TCP 连接中，仅有两方进行彼此通信。广播和多播不能用于 TCPTCP 使用校验和，确认和重传机制来保证可靠传输TCP 给数据分节进行排序，并使用累积确认保证数据的顺序不变和非重复TCP 使用滑动窗口机制来实现流量控制，通过动态改变窗口的大小进行拥塞控制 三次握手与四次挥手 所谓三次握手(Three-way Handshake)，是指建立一个 T">
+<meta property="og:description" content="Socket 基本概念 Socket 是对 TCP/IP 协议族的一种封装，是应用层与TCP/IP协议族通信的中间软件抽象层。从设计模式的角度看来，Socket其实就是一个门面模式，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。 Socket 还可以认为是一种网络间不同计算机上的进程通信的一种方法，利用三元组">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-17T01:56:21.829Z">
+<meta property="og:updated_time" content="2019-10-17T08:42:31.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TCP">
-<meta name="twitter:description" content="TCP 提供一种面向连接的、可靠的字节流服务在一个 TCP 连接中，仅有两方进行彼此通信。广播和多播不能用于 TCPTCP 使用校验和，确认和重传机制来保证可靠传输TCP 给数据分节进行排序，并使用累积确认保证数据的顺序不变和非重复TCP 使用滑动窗口机制来实现流量控制，通过动态改变窗口的大小进行拥塞控制 三次握手与四次挥手 所谓三次握手(Three-way Handshake)，是指建立一个 T">
+<meta name="twitter:title" content="Socket 基本概念">
+<meta name="twitter:description" content="Socket 基本概念 Socket 是对 TCP/IP 协议族的一种封装，是应用层与TCP/IP协议族通信的中间软件抽象层。从设计模式的角度看来，Socket其实就是一个门面模式，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。 Socket 还可以认为是一种网络间不同计算机上的进程通信的一种方法，利用三元组">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/17/liutaocritrle_14/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/10/18/liutaocritrle_17/"/>
 
 
 
 
 
-  <title>TCP | liutao's blog</title>
+  <title>Socket 基本概念 | liutao's blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/17/liutaocritrle_14/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/liutaocritrle_17/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="coderLiu">
@@ -280,7 +280,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">TCP</h2>
+          <h2 class="post-title" itemprop="name headline">Socket 基本概念</h2>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-17T09:15:40+08:00">
-                2019-10-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-18T09:15:40+08:00">
+                2019-10-18
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS-黑魔法/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS 黑魔法</span>
+                  <a href="/categories/iOS-小技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS 小技巧</span>
                   </a>
                 </span>
 
@@ -357,47 +357,164 @@
       
 
       
-        <p>TCP 提供一种面向连接的、可靠的字节流服务<br>在一个 TCP 连接中，仅有两方进行彼此通信。广播和多播不能用于 TCP<br>TCP 使用校验和，确认和重传机制来保证可靠传输<br>TCP 给数据分节进行排序，并使用累积确认保证数据的顺序不变和非重复<br>TCP 使用滑动窗口机制来实现流量控制，通过动态改变窗口的大小进行拥塞控制</p>
-<p>三次握手与四次挥手</p>
-<p>所谓三次握手(Three-way Handshake)，是指建立一个 TCP 连接时，需要客户端和服务器总共发送3个包。</p>
-<p>三次握手的目的是连接服务器指定端口，建立 TCP 连接，并同步连接双方的序列号和确认号，交换 TCP 窗口大小信息。在 socket 编程中，客户端执行 connect() 时。将触发三次握手。</p>
-<p>第一次握手(SYN=1, seq=x):</p>
-<p>客户端发送一个 TCP 的 SYN 标志位置1的包，指明客户端打算连接的服务器的端口，以及初始序号 X,保存在包头的序列号(Sequence Number)字段里。</p>
-<p>发送完毕后，客户端进入 SYN_SEND 状态。</p>
-<p>第二次握手(SYN=1, ACK=1, seq=y, ACKnum=x+1):</p>
-<p>服务器发回确认包(ACK)应答。即 SYN 标志位和 ACK 标志位均为1。服务器端选择自己 ISN 序列号，放到 Seq 域里，同时将确认序号(Acknowledgement Number)设置为客户的 ISN 加1，即X+1。 发送完毕后，服务器端进入 SYN_RCVD 状态。</p>
-<p>第三次握手(ACK=1，ACKnum=y+1)</p>
-<p>客户端再次发送确认包(ACK)，SYN 标志位为0，ACK 标志位为1，并且把服务器发来 ACK 的序号字段+1，放在确定字段中发送给对方，并且在数据段放写ISN的+1</p>
-<p>发送完毕后，客户端进入 ESTABLISHED 状态，当服务器端接收到这个包时，也进入 ESTABLISHED 状态，TCP 握手结束。</p>
-<p>1.客户端：SYN=1，seq=x<br>2.服务器：SYN=1，seq=y;ACK=1,ACKnum=x+1<br>3.客户端：ACK=1，ACKnum = y + 1</p>
-<p>TCP 的连接的拆除需要发送四个包，因此称为四次挥手(Four-way handshake)，也叫做改进的三次握手。客户端或服务器均可主动发起挥手动作，在 socket 编程中，任何一方执行 close() 操作即可产生挥手操作。</p>
-<p>第一次挥手(FIN=1，seq=x)</p>
-<p>假设客户端想要关闭连接，客户端发送一个 FIN 标志位置为1的包，表示自己已经没有数据可以发送了，但是仍然可以接受数据。</p>
-<p>发送完毕后，客户端进入 FIN_WAIT_1 状态。</p>
-<p>第二次挥手(ACK=1，ACKnum=x+1)</p>
-<p>服务器端确认客户端的 FIN 包，发送一个确认包，表明自己接受到了客户端关闭连接的请求，但还没有准备好关闭连接。</p>
-<p>发送完毕后，服务器端进入 CLOSE_WAIT 状态，客户端接收到这个确认包之后，进入 FIN_WAIT_2 状态，等待服务器端关闭连接。</p>
-<p>第三次挥手(FIN=1，seq=y)</p>
-<p>服务器端准备好关闭连接时，向客户端发送结束连接请求，FIN 置为1。</p>
-<p>发送完毕后，服务器端进入 LAST_ACK 状态，等待来自客户端的最后一个ACK。</p>
-<p>第四次挥手(ACK=1，ACKnum=y+1)</p>
-<p>客户端接收到来自服务器端的关闭请求，发送一个确认包，并进入 TIME_WAIT状态，等待可能出现的要求重传的 ACK 包。</p>
-<p>服务器端接收到这个确认包之后，关闭连接，进入 CLOSED 状态。</p>
-<p>客户端等待了某个固定时间（两个最大段生命周期，2MSL，2 Maximum Segment Lifetime）之后，没有收到服务器端的 ACK ，认为服务器端已经正常关闭连接，于是自己也关闭连接，进入 CLOSED 状态。</p>
-<p>SYN（Synchronize Sequence Numbers） 攻击</p>
-<p>什么是 SYN 攻击（SYN Flood）？</p>
-<p>在三次握手过程中，服务器发送 SYN-ACK 之后，收到客户端的 ACK 之前的 TCP 连接称为半连接(half-open connect)。此时服务器处于 SYN_RCVD 状态。当收到 ACK 后，服务器才能转入 ESTABLISHED 状态.</p>
-<p>SYN 攻击指的是，攻击客户端在短时间内伪造大量不存在的IP地址，向服务器不断地发送SYN包，服务器回复确认包，并等待客户的确认。由于源地址是不存在的，服务器需要不断的重发直至超时，这些伪造的SYN包将长时间占用未连接队列，正常的SYN请求被丢弃，导致目标系统运行缓慢，严重者会引起网络堵塞甚至系统瘫痪。</p>
-<p>SYN 攻击是一种典型的 DoS/DDoS 攻击。</p>
-<p>如何检测 SYN 攻击？</p>
-<p>检测 SYN 攻击非常的方便，当你在服务器上看到大量的半连接状态时，特别是源IP地址是随机的，基本上可以断定这是一次SYN攻击。在 Linux/Unix 上可以使用系统自带的 netstats 命令来检测 SYN 攻击。</p>
-<p>如何防御 SYN 攻击？</p>
-<p>SYN攻击不能完全被阻止，除非将TCP协议重新设计。我们所做的是尽可能的减轻SYN攻击的危害，常见的防御 SYN 攻击的方法有如下几种：</p>
-<p>缩短超时（SYN Timeout）时间<br>增加最大半连接数<br>过滤网关防护<br>SYN cookies技术</p>
-<p>TCP KeepAlive</p>
-<p>TCP 的连接，实际上是一种纯软件层面的概念，在物理层面并没有“连接”这种概念。TCP 通信双方建立交互的连接，但是并不是一直存在数据交互，有些连接会在数据交互完毕后，主动释放连接，而有些不会。在长时间无数据交互的时间段内，交互双方都有可能出现掉电、死机、异常重启等各种意外，当这些意外发生之后，这些 TCP 连接并未来得及正常释放，在软件层面上，连接的另一方并不知道对端的情况，它会一直维护这个连接，长时间的积累会导致非常多的半打开连接，造成端系统资源的消耗和浪费，为了解决这个问题，在传输层可以利用 TCP 的 KeepAlive 机制实现来实现。主流的操作系统基本都在内核里支持了这个特性。</p>
-<p>TCP KeepAlive 的基本原理是，隔一段时间给连接对端发送一个探测包，如果收到对方回应的 ACK，则认为连接还是存活的，在超过一定重试次数之后还是没有收到对方的回应，则丢弃该 TCP 连接。</p>
-<p>TCP-Keepalive-HOWTO 有对 TCP KeepAlive 特性的详细介绍，有兴趣的同学可以参考。这里主要说一下，TCP KeepAlive 的局限。首先 TCP KeepAlive 监测的方式是发送一个 probe 包，会给网络带来额外的流量，另外 TCP KeepAlive 只能在内核层级监测连接的存活与否，而连接的存活不一定代表服务的可用。例如当一个服务器 CPU 进程服务器占用达到 100%，已经卡死不能响应请求了，此时 TCP KeepAlive 依然会认为连接是存活的。因此 TCP KeepAlive 对于应用层程序的价值是相对较小的。需要做连接保活的应用层程序，例如 QQ，往往会在应用层实现自己的心跳功能。</p>
+        <p>Socket 基本概念</p>
+<p>Socket 是对 TCP/IP 协议族的一种封装，是应用层与TCP/IP协议族通信的中间软件抽象层。从设计模式的角度看来，Socket其实就是一个门面模式，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。</p>
+<p>Socket 还可以认为是一种网络间不同计算机上的进程通信的一种方法，利用三元组（ip地址，协议，端口）就可以唯一标识网络中的进程，网络中的进程通信可以利用这个标志与其它进程进行交互。</p>
+<p>Socket 起源于 Unix ，Unix/Linux 基本哲学之一就是“一切皆文件”，都可以用“打开(open) –&gt; 读写(write/read) –&gt; 关闭(close)”模式来进行操作。因此 Socket 也被处理为一种特殊的文件。</p>
+<p>写一个简易的 WebServer</p>
+<p>一个简易的 Server 的流程如下：</p>
+<p>1.建立连接，接受一个客户端连接。<br>2.接受请求，从网络中读取一条 HTTP 请求报文。<br>3.处理请求，访问资源。<br>4.构建响应，创建带有 header 的 HTTP 响应报文。<br>5.发送响应，传给客户端。<br>省略流程 3，大体的程序与调用的函数逻辑如下：</p>
+<p>socket() 创建套接字<br>bind() 分配套接字地址<br>listen() 等待连接请求<br>accept() 允许连接请求<br>read()/write() 数据交换<br>close() 关闭连接</p>
+<p>代码如下：</p>
+<p>#include <cstdio></cstdio></p>
+<p>#include <cstdlib></cstdlib></p>
+<p>#include <cstring></cstring></p>
+<p>#include &lt;unistd.h&gt;</p>
+<p>#include &lt;sys/socket.h&gt;</p>
+<p>#include &lt;arpa/inet.h&gt;</p>
+<p>#include <string></string></p>
+<p>#include <cstring></cstring></p>
+<p>#include <iostream></iostream></p>
+<p>using namespace std;</p>
+<p>const int port = 9090;<br>const int buffer_size = 1&lt;&lt;20;<br>const int method_size = 1&lt;&lt;10;<br>const int filename_size = 1&lt;&lt;10;<br>const int common_buffer_size = 1&lt;&lt;10;</p>
+<p>void handleError(const string &amp;message);<br>void requestHandling(int <em>sock);<br>void sendError(int </em>sock);<br>void sendData(int <em>sock, char </em>filename);<br>void sendHTML(int <em>sock, char </em>filename);<br>void sendJPG(int <em>sock, char </em>filename);</p>
+<p>int main()<br>{<br>    int server_sock;<br>    int client_sock;</p>
+<pre><code>struct sockaddr_in server_address;
+struct sockaddr_in client_address;
+
+socklen_t client_address_size;
+
+server_sock = socket(PF_INET, SOCK_STREAM, 0);
+
+if (server_sock == -1)
+{
+    handleError(&quot;socket error&quot;);
+}
+
+memset(&amp;server_address,0,sizeof(server_address));
+server_address.sin_family = AF_INET;
+server_address.sin_addr.s_addr = htonl(INADDR_ANY);
+server_address.sin_port = htons(port);
+
+if(bind(server_sock,(struct sockaddr*)&amp;server_address, sizeof(server_address)) == -1){
+    handleError(&quot;bind error&quot;);
+}
+
+if(listen(server_sock, 5) == -1) {
+    handleError(&quot;listen error&quot;);
+}
+
+while(true) {
+    client_address_size = sizeof(client_address);
+    client_sock = accept(server_sock, (struct sockaddr*) &amp;client_address, &amp;client_address_size);
+
+    if (client_sock == -1) {
+        handleError(&quot;accept error&quot;);
+    }
+    requestHandling(&amp;client_sock);
+}
+
+//system(&quot;open http://127.0.0.1:9090/index.html&quot;);
+close(server_sock);
+
+return 0;
+</code></pre><p>}</p>
+<p>void requestHandling(int <em>sock){<br>    int client_sock = </em>sock;<br>    char buffer[buffer_size];<br>    char method[method_size];<br>    char filename[filename_size];</p>
+<pre><code>read(client_sock, buffer, sizeof(buffer)-1);
+
+if(!strstr(buffer, &quot;HTTP/&quot;)) {
+    sendError(sock);
+    close(client_sock);
+    return;
+}
+
+strcpy(method, strtok(buffer,&quot; /&quot;));
+strcpy(filename, strtok(NULL, &quot; /&quot;));
+
+if(0 != strcmp(method, &quot;GET&quot;)) {
+    sendError(sock);
+    close(client_sock);
+    return;
+}
+
+sendData(sock, filename);
+</code></pre><p>}</p>
+<p>void sendData(int <em>sock, char </em>filename) {<br>    int client_sock = *sock;<br>    char buffer[common_buffer_size];<br>    char type[common_buffer_size];</p>
+<pre><code>strcpy(buffer, filename);
+
+strtok(buffer, &quot;.&quot;);
+strcpy(type, strtok(NULL, &quot;.&quot;));
+
+if(0 == strcmp(type, &quot;html&quot;)){
+    sendHTML(sock, filename);
+}else if(0 == strcmp(type, &quot;jpg&quot;)){
+    sendJPG(sock, filename);
+}else{
+    sendError(sock);
+    close(client_sock);
+    return ;
+}
+</code></pre><p>}</p>
+<p>void sendHTML(int <em>sock, char </em>filename) {<br>    int client_sock = <em>sock;<br>    char buffer[buffer_size];<br>    FILE </em>fp;</p>
+<pre><code>char status[] = &quot;HTTP/1.0 200 OK\r\n&quot;;
+char header[] = &quot;Server: A Simple Web Server\r\nContent-Type: text/html\r\n\r\n&quot;;
+
+write(client_sock, status, strlen(status));
+write(client_sock, header, strlen(header));
+
+fp = fopen(filename, &quot;r&quot;);
+if(!fp){
+    sendError(sock);
+    close(client_sock);
+    handleError(&quot;failed to open file&quot;);
+    return ;
+}
+
+fgets(buffer,sizeof(buffer), fp);
+while(!feof(fp)) {
+    write(client_sock, buffer, strlen(buffer));
+    fgets(buffer, sizeof(buffer), fp);
+}
+
+fclose(fp);
+close(client_sock);
+</code></pre><p>}</p>
+<p>void sendJPG(int <em>sock, char </em>filename) {<br>    int client_sock = <em>sock;<br>    char buffer[buffer_size];<br>    FILE </em>fp;<br>    FILE *fw;</p>
+<pre><code>char status[] = &quot;HTTP/1.0 200 OK\r\n&quot;;
+char header[] = &quot;Server: A Simple Web Server\r\nContent-Type: image/jpeg\r\n\r\n&quot;;
+
+write(client_sock, status, strlen(status));
+write(client_sock, header, strlen(header));
+
+fp = fopen(filename, &quot;rb&quot;);
+if(NULL == fp){
+    sendError(sock);
+    close(client_sock);
+    handleError(&quot;failed to open file&quot;);
+    return ;
+}
+
+fw = fdopen(client_sock, &quot;w&quot;);
+fread(buffer, 1, sizeof(buffer), fp);
+while (!feof(fp)){
+    fwrite(buffer, 1, sizeof(buffer), fw);
+    fread(buffer, 1, sizeof(buffer), fp);
+}
+
+fclose(fw);
+fclose(fp);
+close(client_sock);
+</code></pre><p>}</p>
+<p>void handleError(const string &amp;message) {<br>    cout&lt;&lt;message;<br>    exit(1);<br>}</p>
+<p>void sendError(int <em>sock){<br>    int client_sock = </em>sock;</p>
+<pre><code>char status[] = &quot;HTTP/1.0 400 Bad Request\r\n&quot;;
+char header[] = &quot;Server: A Simple Web Server\r\nContent-Type: text/html\r\n\r\n&quot;;
+char body[] = &quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;Bad Request&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;400 Bad Request&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;;
+
+write(client_sock, status, sizeof(status));
+write(client_sock, header, sizeof(header));
+write(client_sock, body, sizeof(body));
+</code></pre><p>}</p>
 
       
     </div>
@@ -428,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/17/liutaocritrle_16/" rel="next" title="IP协议简介">
-                <i class="fa fa-chevron-left"></i> IP协议简介
+              <a href="/2019/10/17/liutaocritrle_15/" rel="next" title="UDP">
+                <i class="fa fa-chevron-left"></i> UDP
               </a>
             
           </div>
@@ -437,10 +554,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/17/liutaocritrle_15/" rel="prev" title="UDP">
-                UDP <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,7 +625,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
