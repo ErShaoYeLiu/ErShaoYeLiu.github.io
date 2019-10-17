@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一、重绘机制 iOS的绘图操作是在UIView类的drawRect方法中完成的，所以如果我们要想在一个UIView中绘图，需要写一个扩展UIView 的类，并重写drawRect方法，在这里进行绘图操作，程序会自动调用此方法进行绘图。重绘操作仍然在drawRect方法中完成，但是苹果不建议直接调用drawRect方法，当然如果你强直直接调用此方法，当然是没有效果的。苹果要求我们调用UIView类中">
+<meta name="description" content="TCP 提供一种面向连接的、可靠的字节流服务在一个 TCP 连接中，仅有两方进行彼此通信。广播和多播不能用于 TCPTCP 使用校验和，确认和重传机制来保证可靠传输TCP 给数据分节进行排序，并使用累积确认保证数据的顺序不变和非重复TCP 使用滑动窗口机制来实现流量控制，通过动态改变窗口的大小进行拥塞控制 三次握手与四次挥手 所谓三次握手(Three-way Handshake)，是指建立一个 T">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS 重绘机制">
-<meta property="og:url" content="http://yoursite.com/2019/05/05/liutaocritrlethree/index.html">
+<meta property="og:title" content="TCP">
+<meta property="og:url" content="http://yoursite.com/2019/10/16/liutaocritrle_14/index.html">
 <meta property="og:site_name" content="liutao&#39;s blog">
-<meta property="og:description" content="一、重绘机制 iOS的绘图操作是在UIView类的drawRect方法中完成的，所以如果我们要想在一个UIView中绘图，需要写一个扩展UIView 的类，并重写drawRect方法，在这里进行绘图操作，程序会自动调用此方法进行绘图。重绘操作仍然在drawRect方法中完成，但是苹果不建议直接调用drawRect方法，当然如果你强直直接调用此方法，当然是没有效果的。苹果要求我们调用UIView类中">
+<meta property="og:description" content="TCP 提供一种面向连接的、可靠的字节流服务在一个 TCP 连接中，仅有两方进行彼此通信。广播和多播不能用于 TCPTCP 使用校验和，确认和重传机制来保证可靠传输TCP 给数据分节进行排序，并使用累积确认保证数据的顺序不变和非重复TCP 使用滑动窗口机制来实现流量控制，通过动态改变窗口的大小进行拥塞控制 三次握手与四次挥手 所谓三次握手(Three-way Handshake)，是指建立一个 T">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T02:51:01.068Z">
+<meta property="og:updated_time" content="2019-10-17T01:53:45.616Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS 重绘机制">
-<meta name="twitter:description" content="一、重绘机制 iOS的绘图操作是在UIView类的drawRect方法中完成的，所以如果我们要想在一个UIView中绘图，需要写一个扩展UIView 的类，并重写drawRect方法，在这里进行绘图操作，程序会自动调用此方法进行绘图。重绘操作仍然在drawRect方法中完成，但是苹果不建议直接调用drawRect方法，当然如果你强直直接调用此方法，当然是没有效果的。苹果要求我们调用UIView类中">
+<meta name="twitter:title" content="TCP">
+<meta name="twitter:description" content="TCP 提供一种面向连接的、可靠的字节流服务在一个 TCP 连接中，仅有两方进行彼此通信。广播和多播不能用于 TCPTCP 使用校验和，确认和重传机制来保证可靠传输TCP 给数据分节进行排序，并使用累积确认保证数据的顺序不变和非重复TCP 使用滑动窗口机制来实现流量控制，通过动态改变窗口的大小进行拥塞控制 三次握手与四次挥手 所谓三次握手(Three-way Handshake)，是指建立一个 T">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/05/liutaocritrlethree/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/10/16/liutaocritrle_14/"/>
 
 
 
 
 
-  <title>iOS 重绘机制 | liutao's blog</title>
+  <title>TCP | liutao's blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/liutaocritrlethree/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/16/liutaocritrle_14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="coderLiu">
@@ -280,7 +280,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">iOS 重绘机制</h2>
+          <h2 class="post-title" itemprop="name headline">TCP</h2>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T08:56:40+08:00">
-                2019-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-16T09:15:40+08:00">
+                2019-10-16
               </time>
             
 
@@ -357,29 +357,47 @@
       
 
       
-        <p>一、重绘机制</p>
-<p>iOS的绘图操作是在UIView类的drawRect方法中完成的，所以如果我们要想在一个UIView中绘图，需要写一个扩展UIView 的类，并重写drawRect方法，在这里进行绘图操作，程序会自动调用此方法进行绘图。<br>重绘操作仍然在drawRect方法中完成，但是苹果不建议直接调用drawRect方法，当然如果你强直直接调用此方法，当然是没有效果的。苹果要求我们调用UIView类中的setNeedsDisplay方法，则程序会自动调用drawRect方法进行重绘。（调用setNeedsDisplay会自动调用drawRect）。<br>在UIView中,重写drawRect: (CGRect) aRect方法,可以自己定义想要画的图案.且此方法一般情况下只会画一次.也就是说这个drawRect方法一般情况下只会被掉用一次. 当某些情况下想要手动重画这个View,只需要掉用[self setNeedsDisplay]方法即可.</p>
-<p>二、方法定义</p>
-<ul>
-<li>①、- (void)drawRect:(CGRect)rect;<br>重写此方法，执行重绘任务</li>
-<li>②、- (void)setNeedsDisplay;<br>标记为需要重绘，异步调用drawRect</li>
-<li>③、- (void)setNeedsDisplayInRect:(CGRect)rect;<br>标记为需要局部重绘</li>
-</ul>
-<p>三、drawRect调用机制</p>
-<p>drawRect调用是在Controller-&gt;loadView,，Controller-&gt;viewDidLoad 两方法之后调用的。所以不用担心在控制器中，这些View的drawRect就开始画了。这样可以在控制器中设置一些值给View(如果这些View draw的时候需要用到某些变量值).</p>
-<ul>
-<li>1、如果在UIView初始化时没有设置rect大小，将直接导致drawRect不被自动调用。</li>
-<li>2、该方法在调用sizeThatFits后被调用，所以可以先调用sizeToFit计算出size。然后系统自动调用drawRect:方法。</li>
-<li>3、通过设置contentMode属性值为UIViewContentModeRedraw。那么将在每次设置或更改frame的时候自动调用drawRect:。</li>
-<li><p>4、直接调用setNeedsDisplay，或者setNeedsDisplayInRect:触发drawRect:，但是有个前提条件是rect不能为0.<br>以上1,2推荐；而3,4不提倡<br>四、绘图</p>
-</li>
-<li><p>1、若使用UIView绘图，只能在drawRect：方法中获取相应的contextRef并绘图。如果在其他方法中获取将获取到一个invalidate的ref并且不能用于画图。drawRect：方法不能手动显示调用，必须通过调用setNeedsDisplay 或者 setNeedsDisplayInRect ，让系统自动调该方法。</p>
-</li>
-<li>2、若使用calayer绘图，只能在drawInContext: 中（类似于drawRect）绘制，或者在delegate中的相应方法绘制。同样也是调用setNeedDisplay等间接调用以上方法。</li>
-<li>3、若要实时画图，不能使用gestureRecognizer，只能使用touchbegan等方法来掉用setNeedsDisplay实时刷新屏幕</li>
-</ul>
-<p>五、比较</p>
-<p>layoutSubviews对subviews重新布局；<br>layoutSubviews方法调用先于drawRect；<br>setNeedsLayout在receiver标上一个需要被重新布局的标记，在系统runloop的下一个周期自动调用layoutSubviews；<br>layoutIfNeeded方法如其名，UIKit会判断该receiver是否需要layout.根据Apple官方文档,layoutIfNeeded方法应该是这样的<br>layoutIfNeeded遍历的不是superview链，应该是subviews链<br>drawRect是对receiver的重绘，能获得context；<br>setNeedDisplay在receiver标上一个需要被重新绘图的标记，在下一个draw周期自动重绘，iphone device的刷新频率是60hz，也就是1/60秒后重绘。</p>
+        <p>TCP 提供一种面向连接的、可靠的字节流服务<br>在一个 TCP 连接中，仅有两方进行彼此通信。广播和多播不能用于 TCP<br>TCP 使用校验和，确认和重传机制来保证可靠传输<br>TCP 给数据分节进行排序，并使用累积确认保证数据的顺序不变和非重复<br>TCP 使用滑动窗口机制来实现流量控制，通过动态改变窗口的大小进行拥塞控制</p>
+<p>三次握手与四次挥手</p>
+<p>所谓三次握手(Three-way Handshake)，是指建立一个 TCP 连接时，需要客户端和服务器总共发送3个包。</p>
+<p>三次握手的目的是连接服务器指定端口，建立 TCP 连接，并同步连接双方的序列号和确认号，交换 TCP 窗口大小信息。在 socket 编程中，客户端执行 connect() 时。将触发三次握手。</p>
+<p>第一次握手(SYN=1, seq=x):</p>
+<p>客户端发送一个 TCP 的 SYN 标志位置1的包，指明客户端打算连接的服务器的端口，以及初始序号 X,保存在包头的序列号(Sequence Number)字段里。</p>
+<p>发送完毕后，客户端进入 SYN_SEND 状态。</p>
+<p>第二次握手(SYN=1, ACK=1, seq=y, ACKnum=x+1):</p>
+<p>服务器发回确认包(ACK)应答。即 SYN 标志位和 ACK 标志位均为1。服务器端选择自己 ISN 序列号，放到 Seq 域里，同时将确认序号(Acknowledgement Number)设置为客户的 ISN 加1，即X+1。 发送完毕后，服务器端进入 SYN_RCVD 状态。</p>
+<p>第三次握手(ACK=1，ACKnum=y+1)</p>
+<p>客户端再次发送确认包(ACK)，SYN 标志位为0，ACK 标志位为1，并且把服务器发来 ACK 的序号字段+1，放在确定字段中发送给对方，并且在数据段放写ISN的+1</p>
+<p>发送完毕后，客户端进入 ESTABLISHED 状态，当服务器端接收到这个包时，也进入 ESTABLISHED 状态，TCP 握手结束。</p>
+<p>1.客户端：SYN=1，seq=x<br>2.服务器：SYN=1，seq=y;ACK=1,ACKnum=x+1<br>3.客户端：ACK=1，ACKnum = y + 1</p>
+<p>TCP 的连接的拆除需要发送四个包，因此称为四次挥手(Four-way handshake)，也叫做改进的三次握手。客户端或服务器均可主动发起挥手动作，在 socket 编程中，任何一方执行 close() 操作即可产生挥手操作。</p>
+<p>第一次挥手(FIN=1，seq=x)</p>
+<p>假设客户端想要关闭连接，客户端发送一个 FIN 标志位置为1的包，表示自己已经没有数据可以发送了，但是仍然可以接受数据。</p>
+<p>发送完毕后，客户端进入 FIN_WAIT_1 状态。</p>
+<p>第二次挥手(ACK=1，ACKnum=x+1)</p>
+<p>服务器端确认客户端的 FIN 包，发送一个确认包，表明自己接受到了客户端关闭连接的请求，但还没有准备好关闭连接。</p>
+<p>发送完毕后，服务器端进入 CLOSE_WAIT 状态，客户端接收到这个确认包之后，进入 FIN_WAIT_2 状态，等待服务器端关闭连接。</p>
+<p>第三次挥手(FIN=1，seq=y)</p>
+<p>服务器端准备好关闭连接时，向客户端发送结束连接请求，FIN 置为1。</p>
+<p>发送完毕后，服务器端进入 LAST_ACK 状态，等待来自客户端的最后一个ACK。</p>
+<p>第四次挥手(ACK=1，ACKnum=y+1)</p>
+<p>客户端接收到来自服务器端的关闭请求，发送一个确认包，并进入 TIME_WAIT状态，等待可能出现的要求重传的 ACK 包。</p>
+<p>服务器端接收到这个确认包之后，关闭连接，进入 CLOSED 状态。</p>
+<p>客户端等待了某个固定时间（两个最大段生命周期，2MSL，2 Maximum Segment Lifetime）之后，没有收到服务器端的 ACK ，认为服务器端已经正常关闭连接，于是自己也关闭连接，进入 CLOSED 状态。</p>
+<p>SYN（Synchronize Sequence Numbers） 攻击</p>
+<p>什么是 SYN 攻击（SYN Flood）？</p>
+<p>在三次握手过程中，服务器发送 SYN-ACK 之后，收到客户端的 ACK 之前的 TCP 连接称为半连接(half-open connect)。此时服务器处于 SYN_RCVD 状态。当收到 ACK 后，服务器才能转入 ESTABLISHED 状态.</p>
+<p>SYN 攻击指的是，攻击客户端在短时间内伪造大量不存在的IP地址，向服务器不断地发送SYN包，服务器回复确认包，并等待客户的确认。由于源地址是不存在的，服务器需要不断的重发直至超时，这些伪造的SYN包将长时间占用未连接队列，正常的SYN请求被丢弃，导致目标系统运行缓慢，严重者会引起网络堵塞甚至系统瘫痪。</p>
+<p>SYN 攻击是一种典型的 DoS/DDoS 攻击。</p>
+<p>如何检测 SYN 攻击？</p>
+<p>检测 SYN 攻击非常的方便，当你在服务器上看到大量的半连接状态时，特别是源IP地址是随机的，基本上可以断定这是一次SYN攻击。在 Linux/Unix 上可以使用系统自带的 netstats 命令来检测 SYN 攻击。</p>
+<p>如何防御 SYN 攻击？</p>
+<p>SYN攻击不能完全被阻止，除非将TCP协议重新设计。我们所做的是尽可能的减轻SYN攻击的危害，常见的防御 SYN 攻击的方法有如下几种：</p>
+<p>缩短超时（SYN Timeout）时间<br>增加最大半连接数<br>过滤网关防护<br>SYN cookies技术</p>
+<p>TCP KeepAlive</p>
+<p>TCP 的连接，实际上是一种纯软件层面的概念，在物理层面并没有“连接”这种概念。TCP 通信双方建立交互的连接，但是并不是一直存在数据交互，有些连接会在数据交互完毕后，主动释放连接，而有些不会。在长时间无数据交互的时间段内，交互双方都有可能出现掉电、死机、异常重启等各种意外，当这些意外发生之后，这些 TCP 连接并未来得及正常释放，在软件层面上，连接的另一方并不知道对端的情况，它会一直维护这个连接，长时间的积累会导致非常多的半打开连接，造成端系统资源的消耗和浪费，为了解决这个问题，在传输层可以利用 TCP 的 KeepAlive 机制实现来实现。主流的操作系统基本都在内核里支持了这个特性。</p>
+<p>TCP KeepAlive 的基本原理是，隔一段时间给连接对端发送一个探测包，如果收到对方回应的 ACK，则认为连接还是存活的，在超过一定重试次数之后还是没有收到对方的回应，则丢弃该 TCP 连接。</p>
+<p>TCP-Keepalive-HOWTO 有对 TCP KeepAlive 特性的详细介绍，有兴趣的同学可以参考。这里主要说一下，TCP KeepAlive 的局限。首先 TCP KeepAlive 监测的方式是发送一个 probe 包，会给网络带来额外的流量，另外 TCP KeepAlive 只能在内核层级监测连接的存活与否，而连接的存活不一定代表服务的可用。例如当一个服务器 CPU 进程服务器占用达到 100%，已经卡死不能响应请求了，此时 TCP KeepAlive 依然会认为连接是存活的。因此 TCP KeepAlive 对于应用层程序的价值是相对较小的。需要做连接保活的应用层程序，例如 QQ，往往会在应用层实现自己的心跳功能。</p>
 
       
     </div>
@@ -410,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/27/liutaocritrlefour/" rel="next" title="Swift中的问号?和感叹号!">
-                <i class="fa fa-chevron-left"></i> Swift中的问号?和感叹号!
+              <a href="/2019/10/16/liutaocritrle_13/" rel="next" title="HTTPS 基本过程">
+                <i class="fa fa-chevron-left"></i> HTTPS 基本过程
               </a>
             
           </div>
@@ -419,10 +437,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/14/liutaocritrle_10/" rel="prev" title="移动App 网络优化细节探讨(转载)">
-                移动App 网络优化细节探讨(转载) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
