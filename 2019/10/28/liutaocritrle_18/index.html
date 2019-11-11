@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="liutao&#39;s blog">
 <meta property="og:description" content="iOS 13支持适配的机型 iPhone X、iPhone XR、iPhone XS、iPhone XS MaxiPhone 8、iPhone 8 PlusiPhone 7、iPhone 7 PlusiPhone 6s、iPhone 6s PlusiPhone SEiPod touch (第七代) 适配要求 Starting April, 2020, all iPhone and iPad app">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-28T06:48:59.213Z">
+<meta property="og:updated_time" content="2019-10-28T06:57:24.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios 13 适配要点总结">
 <meta name="twitter:description" content="iOS 13支持适配的机型 iPhone X、iPhone XR、iPhone XS、iPhone XS MaxiPhone 8、iPhone 8 PlusiPhone 7、iPhone 7 PlusiPhone 6s、iPhone 6s PlusiPhone SEiPod touch (第七代) 适配要求 Starting April, 2020, all iPhone and iPad app">
@@ -378,6 +378,32 @@
 <p>另外需要注意，关于何时要求接入 Sign In With Apple，苹果在 News and Updates 中提到：</p>
 <p>Starting today, new apps submitted to the App Store must follow these guidelines. Existing apps and app updates must follow them by April 2020.</p>
 <p>2019 年 9 月 12 日 起，提交到 App Store 的新应用必须按照应用审核指南中的标准进行接入；现有应用和应用更新必须也在 2020 年 4 月前完成接入。</p>
+<p>API 适配</p>
+<ol>
+<li>私有方法 KVC 可能导致崩溃</li>
+</ol>
+<p>在 iOS 13 中部分方法属性不允许使用 valueForKey、setValue:forKey: 来获取或者设置私有属性，具体表现为在运行时会直接崩溃，并提示以下崩溃信息：</p>
+<p>*** Terminating app due to uncaught exception ‘NSGenericException’, reason: ‘Access to UISearchBar’s _searchField ivar is prohibited. This is an application bug’</p>
+<p>目前整理的会导致崩溃的私有 api 和对应替代方案如下，感谢 @君赏 的反馈，也欢迎各位大佬补充和指正 </p>
+<p>// 崩溃 api<br>UITextField *textField = [searchBar valueForKey:@”_searchField”];</p>
+<p>// 替代方案 1，使用 iOS 13 的新属性 searchTextField<br>searchBar.searchTextField.placeholder = @”search”;</p>
+<p>// 替代方案 2，遍历获取指定类型的属性</p>
+<ul>
+<li><p>(UIView <em>)findViewWithClassName:(NSString </em>)className inView:(UIView *)view{<br>  Class specificView = NSClassFromString(className);<br>  if ([view isKindOfClass:specificView]) {</p>
+<pre><code>return view;
+</code></pre><p>  }</p>
+<p>  if (view.subviews.count &gt; 0) {</p>
+<pre><code>for (UIView *subView in view.subviews) {
+    UIView *targetView = [self findViewWithClassName:className inView:subView];
+    if (targetView != nil) {
+        return targetView;
+    }
+}
+</code></pre><p>  }</p>
+<p>  return nil;<br>}</p>
+</li>
+</ul>
+<p>// 调用方法<br> UITextField *textField = [self findViewWithClassName:@”UITextField” inView:_searchBar];</p>
 
       
     </div>
